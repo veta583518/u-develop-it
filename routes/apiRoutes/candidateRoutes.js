@@ -103,7 +103,7 @@ router.put("/candidate/:id", (req, res) => {
                 WHERE id = ?`;
   const params = [req.body.party_id, req.params.id];
 
-  db.run(sql, params, function (err, result) {
+  db.run(sql, params, function (err, data) {
     if (err) {
       res.status(400).json({ error: err.message });
       return;
